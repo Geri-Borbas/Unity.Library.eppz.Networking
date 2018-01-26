@@ -1,6 +1,12 @@
 # eppz.Networking
 
 
+* 0.0.3
+		
+	+ Hotfixed a `RegEx` issue
+		+ `RegexOptions.Compiled` was not available
+		+ Using `UNITY_5_0_OR_NEWER` and `UNITY_2017_1_OR_NEWER` compiler macros
+
 * 0.0.2
 
 	+ Added RestSharp `105.2.3` (last release not using C#4 features)

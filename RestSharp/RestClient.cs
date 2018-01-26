@@ -267,7 +267,7 @@ namespace RestSharp
             return null;
         }
 
-#if SILVERLIGHT
+#if SILVERLIGHT || UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         private readonly Regex structuredSyntaxSuffixRegex = new Regex(@"\+\w+$");
 
         private readonly Regex structuredSyntaxSuffixWildcardRegex = new Regex(@"^\*\+\w+$");
