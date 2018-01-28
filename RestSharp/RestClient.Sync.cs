@@ -1,4 +1,4 @@
-﻿#if FRAMEWORK
+﻿#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 
 using System;
 

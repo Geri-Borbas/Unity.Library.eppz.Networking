@@ -16,7 +16,7 @@
 
 #endregion
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 
 using System;
 using System.IO;
@@ -266,7 +266,7 @@ namespace RestSharp
 
             webRequest.AutomaticDecompression = DecompressionMethods.Deflate | DecompressionMethods.GZip | DecompressionMethods.None;
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             if (this.ClientCertificates != null)
             {
                 webRequest.ClientCertificates.AddRange(this.ClientCertificates);
@@ -298,7 +298,7 @@ namespace RestSharp
                 webRequest.Proxy = this.Proxy;
             }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             if (this.CachePolicy != null)
             {
                 webRequest.CachePolicy = this.CachePolicy;

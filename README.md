@@ -7,7 +7,7 @@ Unity networking for the everyday.
 
 ## Attribution
 
-This repository actually includes [**RestSharp** (105.2.1)](https://github.com/restsharp/RestSharp/tree/105.2.3), containing the source files only (and some compiler macros needed for the compilation to succeed).
+This repository actually includes [**RestSharp** (105.2.1)](https://github.com/restsharp/RestSharp/tree/105.2.3), the latest version with .NET 3.5 compatibility (suitable for Unity usage). Contains the source files only, and some compiler macros needed for the compilation to succeed.
 
 
 ## License

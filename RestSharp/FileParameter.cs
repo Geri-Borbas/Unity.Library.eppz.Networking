@@ -18,7 +18,7 @@ namespace RestSharp
         ///<returns>The <see cref="FileParameter"/></returns>
         public static FileParameter Create(string name, byte[] data, string filename, string contentType)
         {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             long length = data.LongLength;
 #else
             long length = data.Length;

@@ -27,7 +27,7 @@ using RestSharp.Authenticators;
 using RestSharp.Deserializers;
 using RestSharp.Extensions;
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 using System.Net.Cache;
 using System.Security.Cryptography.X509Certificates;
 #endif
@@ -49,7 +49,7 @@ namespace RestSharp
         /// </summary>
         public int? MaxRedirects { get; set; }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         /// <summary>
         /// X509CertificateCollection to be sent with request
         /// </summary>
@@ -440,7 +440,7 @@ namespace RestSharp
             http.FollowRedirects = this.FollowRedirects;
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             if (this.ClientCertificates != null)
             {
                 http.ClientCertificates = this.ClientCertificates;
@@ -537,12 +537,12 @@ namespace RestSharp
                                         });
                 }
             }
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             this.ConfigureProxy(http);
 #endif
         }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         private void ConfigureProxy(IHttp http)
         {
             if (this.Proxy != null)

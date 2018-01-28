@@ -86,7 +86,7 @@ namespace RestSharp.Extensions
             return HttpUtility.HtmlEncode(input);
         }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         public static string HtmlAttributeEncode(this string input)
         {
             return HttpUtility.HtmlAttributeEncode(input);

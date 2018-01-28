@@ -275,7 +275,7 @@ namespace RestSharp
 
         private void SetTimeout(IAsyncResult asyncResult, TimeOutState timeOutState)
         {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             if (this.Timeout != 0)
             {
                 ThreadPool.RegisterWaitForSingleObject(asyncResult.AsyncWaitHandle,
@@ -447,7 +447,7 @@ namespace RestSharp
             }
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             if (this.ClientCertificates != null)
             {
                 webRequest.ClientCertificates.AddRange(this.ClientCertificates);

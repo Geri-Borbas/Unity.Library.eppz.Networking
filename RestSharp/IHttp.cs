@@ -22,7 +22,7 @@ using System.IO;
 using System.Net;
 using System.Text;
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 using System.Net.Cache;
 using System.Security.Cryptography.X509Certificates;
 #endif
@@ -52,7 +52,7 @@ namespace RestSharp
         bool FollowRedirects { get; set; }
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         X509CertificateCollection ClientCertificates { get; set; }
 
         int? MaxRedirects { get; set; }
@@ -76,7 +76,7 @@ namespace RestSharp
 
         bool PreAuthenticate { get; set; }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         RequestCachePolicy CachePolicy { get; set; }
 #endif
 
@@ -107,7 +107,7 @@ namespace RestSharp
 
         HttpWebRequest AsGetAsync(Action<HttpResponse> action, string httpMethod);
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         HttpResponse Delete();
 
         HttpResponse Get();

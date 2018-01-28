@@ -131,7 +131,7 @@ namespace RestSharp
         /// </summary>
         bool UseDefaultCredentials { get; set; }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         /// <summary>
         /// Adds a file to the Files collection to be included with a POST or PUT request 
         /// (other methods do not support file uploads).

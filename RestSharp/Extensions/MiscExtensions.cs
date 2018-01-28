@@ -98,7 +98,7 @@ namespace RestSharp.Extensions
             // Ansi as default
             Encoding encoding = Encoding.UTF8;
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             return encoding.GetString(buffer, 0, buffer.Length);
 #else
             if (buffer.Length == 0)

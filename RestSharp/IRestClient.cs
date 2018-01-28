@@ -28,7 +28,7 @@ using System.Threading;
 using System.Threading.Tasks;
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 using System.Net.Cache;
 using System.Security.Cryptography.X509Certificates;
 #endif
@@ -63,7 +63,7 @@ namespace RestSharp
 
         RestRequestAsyncHandle ExecuteAsync<T>(IRestRequest request, Action<IRestResponse<T>, RestRequestAsyncHandle> callback);
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         IRestResponse Execute(IRestRequest request);
 
         IRestResponse<T> Execute<T>(IRestRequest request) where T : new();
@@ -71,7 +71,7 @@ namespace RestSharp
         byte[] DownloadData(IRestRequest request);
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         /// <summary>
         /// X509CertificateCollection to be sent with request
         /// </summary>
@@ -130,7 +130,7 @@ namespace RestSharp
 
         void ClearHandlers();
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         IRestResponse ExecuteAsGet(IRestRequest request, string httpMethod);
 
         IRestResponse ExecuteAsPost(IRestRequest request, string httpMethod);

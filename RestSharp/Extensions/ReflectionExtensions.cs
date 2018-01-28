@@ -20,7 +20,7 @@ using System;
 using System.Globalization;
 using System.Reflection;
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 using System.Linq;
 #endif
 
@@ -80,7 +80,7 @@ namespace RestSharp.Extensions
 
         public static object ChangeType(this object source, Type newType)
         {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             return Convert.ChangeType(source, newType);
 #else
             return Convert.ChangeType(source, newType, null);
@@ -89,7 +89,7 @@ namespace RestSharp.Extensions
 
         public static object ChangeType(this object source, Type newType, CultureInfo culture)
         {
-#if FRAMEWORK || SILVERLIGHT || WINDOWS_PHONE
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER || SILVERLIGHT || WINDOWS_PHONE
             return Convert.ChangeType(source, newType, culture);
 #else
             return Convert.ChangeType(source, newType, null);
@@ -106,7 +106,7 @@ namespace RestSharp.Extensions
         /// <returns></returns>
         public static object FindEnumValue(this Type type, string value, CultureInfo culture)
         {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             Enum ret = Enum.GetValues(type)
                            .Cast<Enum>()
                            .FirstOrDefault(v => v.ToString()

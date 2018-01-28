@@ -28,7 +28,7 @@ using RestSharp.Extensions;
 using RestSharp.Compression.ZLib;
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
 using System.Net.Cache;
 using System.Security.Cryptography.X509Certificates;
 using System.Text.RegularExpressions;
@@ -131,7 +131,7 @@ namespace RestSharp
         public bool FollowRedirects { get; set; }
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         /// <summary>
         /// X509CertificateCollection to be sent with request
         /// </summary>
@@ -197,7 +197,7 @@ namespace RestSharp
         /// </summary>
         public bool PreAuthenticate { get; set; }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         /// <summary>
         /// Proxy info to be sent with request
         /// </summary>
@@ -252,7 +252,7 @@ namespace RestSharp
             this.restrictedHeaderActions.Add("Host", (r, v) => { /* Set by system */ });
 #endif
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
             this.restrictedHeaderActions.Add("Range", AddRange);
 #endif
         }
@@ -299,7 +299,7 @@ namespace RestSharp
                 }
                 else
                 {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
                     webRequest.Headers.Add(header.Name, header.Value);
 #else
                     webRequest.Headers[header.Name] = header.Value;
@@ -314,7 +314,7 @@ namespace RestSharp
 
             foreach (HttpCookie httpCookie in this.Cookies)
             {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
                 Cookie cookie = new Cookie
                                 {
                                     Name = httpCookie.Name,
@@ -401,7 +401,7 @@ namespace RestSharp
         {
             using (webResponse)
             {
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
                 response.ContentEncoding = webResponse.ContentEncoding;
                 response.Server = webResponse.Server;
 #endif
@@ -481,7 +481,7 @@ namespace RestSharp
             }
         }
 
-#if FRAMEWORK
+#if UNITY_5_0_OR_NEWER || UNITY_2017_1_OR_NEWER
         private static void AddRange(HttpWebRequest r, string range)
         {
             Match m = Regex.Match(range, "(\\w+)=(\\d+)-(\\d+)$");
